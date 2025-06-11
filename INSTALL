@@ -1,4 +1,4 @@
-1. Öffnet eure Shelly-App und sucht euch ein Debice eurer Wahl aus, z. B. ein PM Mini Gen. 3 oder ein Pro 3 EM.
+1. Öffnet eure Shelly-App und sucht euch ein Device eurer Wahl aus, z. B. ein PM Mini Gen. 3 oder ein Pro 3 EM.
 2. In den Einstellungen findet ihr einen Button für Skripte (geschweifte Klammern).
 3. Erstellt ein neues Skript und gebt ihm irgendeinen Namen, z. B. den meines Repositories.
 4. Kopiert dort meinen Code rein und speichert ihn ab.
