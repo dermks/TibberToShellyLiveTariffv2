@@ -2,7 +2,10 @@ let apiUrl = "https://api.tibber.com/v1-beta/gql";
 let token = "xxx";
 	// Hier euren Tibber-Token einsetzen
 let query = JSON.stringify({
-  query: '{ viewer { homes { currentSubscription { priceInfo { current { total }}}}}}'
+  query: '{ viewer { homes { currentSubscription { priceInfo(resolution: QUARTER_HOURLY) { current { total }}}}}}'
+        // Diese Zeile holt den Stundenpreis, die Zeile oben den Viertelstundenpreis
+  //query: '{ viewer { homes { currentSubscription { priceInfo(resolution: HOURLY) { current { total }}}}}}'
+
 });
 let shellyCloudUrl = "xxx";
 	// Die URL sieht grob so aus: https://shelly-NN-eu.shelly.cloud/v2/user/pp-ltu/xxx
@@ -85,12 +88,7 @@ Timer.set(60000, true, function ()
   {
     let now = new Date();
     let minute = now.getMinutes();
-    //let minute = 0;
-    //let second = now.getSeconds();
-    //let second = 4;
-    //print(minutes, seconds);
     // Nur zur vollen Stunde (Minuten und Sekunden = 0)
-    //if (minutes % 15 === 0 && seconds < 10)
     if (minute % 15 === 0)
       {
         fetchTibberPrice();
